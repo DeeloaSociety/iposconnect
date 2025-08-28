@@ -1,7 +1,7 @@
 from ibis import Table, ifelse
 from pandas import DataFrame
 
-from .base import BaseTable, BaseBuilder, BaseForcast
+from .base import BaseTable, BaseBuilder, BaseForecast
 from .master import Item
 
 
@@ -313,7 +313,7 @@ class SalesInvoiceDetails(BaseTable):
         def revenueByWarehouse(self) -> Table:
             return self.revenueAgg(["lokasi_keluar"])
 
-    def forcast(self, item_kode):
+    def forecast(self, item_kode):
         self.table = self.load().filter(
             self.table.kode_item == item_kode,
         )
@@ -325,9 +325,9 @@ class SalesInvoiceDetails(BaseTable):
             )
         )
 
-        return SalesInvoiceDetails.SalesForcast(df=df.to_pandas())
+        return SalesInvoiceDetails.SalesForecast(df=df.to_pandas())
 
-    class SalesForcast(BaseForcast):
+    class SalesForecast(BaseForecast):
         def extract(self) -> DataFrame:
             self.df = self.df.astype({
                 "invoice_created": "datetime64[ns]",

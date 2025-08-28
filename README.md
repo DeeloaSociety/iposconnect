@@ -59,7 +59,7 @@ journalV5.financialRatio().socialResponsibilityToProfitRatio()
 sales_forecast = (
     iposConnect.salesInvoiceDetails()
     .between("2025-08-14", "2025-08-22")
-    .forcast(item_kode="07-pengaha-bunga-1bks")
+    .forecast(item_kode="07-pengaha-bunga-1bks")
     .prepare(target='jumlah_item')
     .fit()
 )

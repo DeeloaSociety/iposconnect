@@ -59,7 +59,7 @@ class BaseBuilder:
         return self.table
 
 
-class BaseForcast(ABC):
+class BaseForecast(ABC):
     def __init__(self, df: DataFrame, target=None):
         self.df = df
         self._target = self.df[target] if target else None
