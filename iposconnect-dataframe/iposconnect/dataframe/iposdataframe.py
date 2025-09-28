@@ -12,14 +12,14 @@ from .transactions import (
 load_dotenv()
 
 
-class IposConnect:
+class IposDataframe:
     def __init__(
             self,
-            host=os.getenv("IBIS_POSTGRES_HOST"),
-            port=os.getenv("IBIS_POSTGRES_PORT"),
-            user=os.getenv("IBIS_POSTGRES_USER"),
-            password=os.getenv("IBIS_POSTGRES_PASSWORD"),
-            database=os.getenv("IBIS_POSTGRES_DATABASE"),
+            host=os.getenv("IPOS_POSTGRES_HOST"),
+            port=os.getenv("IPOS_POSTGRES_PORT"),
+            user=os.getenv("IPOS_POSTGRES_USER"),
+            password=os.getenv("IPOS_POSTGRES_PASSWORD"),
+            database=os.getenv("IPOS_POSTGRES_DATABASE"),
     ):
         self.connection = ibis.connect(f"postgres://{user}:{password}@{host}:{port}/{database}")
 

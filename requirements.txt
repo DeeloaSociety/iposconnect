@@ -1,5 +1,0 @@
-dotenv==0.9.9
-pandas==2.3.0
-ibis-framework[duckdb,postgres]==10.6.0
-skforecast==0.16.0
-lightgbm==4.6.0
