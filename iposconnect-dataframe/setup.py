@@ -5,7 +5,7 @@ PACKAGE_NAME = "dataframe"
 plugin_requires = [
     "dotenv==0.9.9",
     "pandas==2.3.2",
-    "ibis-framework[duckdb,mysql,sqlite]==10.8.0",
+    "ibis-framework[duckdb,postgres]==10.8.0",
     "skforecast==0.18.0",
     "lightgbm==4.6.0",
 ]
